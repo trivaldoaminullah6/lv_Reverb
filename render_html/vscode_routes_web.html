@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 24px; background: #e5e7eb; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 90vh; }
+  .window { width: 980px; background: #ffffff; border-radius: 8px; box-shadow: 0 16px 40px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid #d1d5db; }
+  .titlebar { background: #f3f4f6; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e5e7eb; }
+  .title { font-size: 12px; color: #4b5563; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+  .tab { background: #ffffff; padding: 8px 20px; font-size: 13px; color: #111827; font-weight: 600; border-top: 2px solid #2563eb; display: inline-flex; align-items: center; gap: 8px; border-right: 1px solid #e5e7eb; }
+  .tab-bar { background: #f9fafb; display: flex; border-bottom: 1px solid #e5e7eb; }
+  .breadcrumb { background: #ffffff; padding: 6px 18px; font-size: 11.5px; color: #6b7280; border-bottom: 1px solid #f3f4f6; }
+  .editor { background: #ffffff; padding: 12px 0; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; line-height: 1.6; }
+  .num { width: 50px; text-align: right; padding-right: 18px; color: #9ca3af; user-select: none; border-right: 1px solid #f3f4f6; }
+  .code { padding-left: 18px; color: #1f2937; white-space: pre-wrap; }
+  .statusbar { background: #007acc; color: white; padding: 4px 16px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <div class="title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#007acc"><path d="M17.5 0h-9L0 8.5l8.5 8.5 9-17zm-9 12.5L3.5 8.5 8.5 3.5l5 5-5 5z"/></svg>
+        <span>Visual Studio Code - lv-revab</span>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tab">
+        <span>📄 web.php</span>
+      </div>
+    </div>
+    <div class="breadcrumb">routes/web.php</div>
+    <div class="editor">
+      <table>
+        <tr><td class="num">1</td><td class="code">&lt;?php</td></tr>
+<tr><td class="num">2</td><td class="code"></td></tr>
+<tr><td class="num">3</td><td class="code">use App\Http\Controllers\OrderController;</td></tr>
+<tr><td class="num">4</td><td class="code">use Illuminate\Support\Facades\Route;</td></tr>
+<tr><td class="num">5</td><td class="code">use Illuminate\Support\Facades\Broadcast;</td></tr>
+<tr><td class="num">6</td><td class="code"></td></tr>
+<tr><td class="num">7</td><td class="code">// Broadcast Channels &amp; Auth</td></tr>
+<tr><td class="num">8</td><td class="code">Broadcast::routes([&#x27;middleware&#x27; =&gt; [&#x27;web&#x27;, &#x27;auth&#x27;]]);</td></tr>
+<tr><td class="num">9</td><td class="code"></td></tr>
+<tr><td class="num">10</td><td class="code">// Acara 34 - Routes</td></tr>
+<tr><td class="num">11</td><td class="code">Route::get(&#x27;/&#x27;, function () { return view(&#x27;welcome&#x27;); });</td></tr>
+<tr><td class="num">12</td><td class="code">Route::get(&#x27;/register&#x27;, function () { return view(&#x27;auth.register&#x27;); });</td></tr>
+<tr><td class="num">13</td><td class="code">Route::get(&#x27;/verify-email&#x27;, function () { return view(&#x27;auth.verify-email&#x27;); });</td></tr>
+<tr><td class="num">14</td><td class="code">Route::get(&#x27;/login&#x27;, function () { return view(&#x27;auth.login&#x27;); });</td></tr>
+<tr><td class="num">15</td><td class="code">Route::get(&#x27;/dashboard&#x27;, function () { return view(&#x27;dashboard&#x27;); })-&gt;name(&#x27;dashboard&#x27;);</td></tr>
+<tr><td class="num">16</td><td class="code"></td></tr>
+<tr><td class="num">17</td><td class="code">// Trigger Event Broadcasting OrderPlaced</td></tr>
+<tr><td class="num">18</td><td class="code">Route::match([&#x27;get&#x27;, &#x27;post&#x27;], &#x27;/order&#x27;, [OrderController::class, &#x27;store&#x27;])-&gt;name(&#x27;order.store&#x27;);</td></tr>
+
+      </table>
+    </div>
+    <div class="statusbar">
+      <span>UTF-8 | PHP | Laravel Framework</span>
+      <span>Ln 18, Col 1</span>
+    </div>
+  </div>
+</body>
+</html>
